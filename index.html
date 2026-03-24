@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phonics Activity Banks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .modal-enter { opacity: 0; }
+        .modal-enter-active { opacity: 1; transition: opacity 0.3s ease-out; }
+        .modal-scale-enter { transform: scale(0.95); opacity: 0; }
+        .modal-scale-enter-active { transform: scale(1); opacity: 1; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    </style>
+</head>
+<body class="text-slate-800 antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-indigo-600 text-white shadow-lg sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tight flex items-center justify-center gap-3">
+                <i class="ph-fill ph-book-open text-4xl text-yellow-300"></i> Phonics for You
+            </h1>
+            <p class="mt-2 text-indigo-200 text-sm md:text-base">Level: Basic | 30 hours (1.5 hrs/class) | Click any card for details</p>
+        </div>
+        
+        <!-- Navigation Tabs -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex space-x-1 overflow-x-auto no-scrollbar pb-2" aria-label="Tabs" id="tabs">
+                <button onclick="switchTab('tab1')" class="tab-btn w-full flex items-center justify-center gap-2 py-3 px-4 text-sm font-semibold rounded-t-lg bg-white text-indigo-700 hover:bg-indigo-50 transition-colors whitespace-nowrap active-tab" data-target="tab1">Units 1-4</button>
+                <button onclick="switchTab('tab2')" class="tab-btn w-full flex items-center justify-center gap-2 py-3 px-4 text-sm font-semibold rounded-t-lg text-indigo-100 hover:bg-indigo-500 hover:text-white transition-colors whitespace-nowrap" data-target="tab2">Units 5-8</button>
+                <button onclick="switchTab('tab3')" class="tab-btn w-full flex items-center justify-center gap-2 py-3 px-4 text-sm font-semibold rounded-t-lg text-indigo-100 hover:bg-indigo-500 hover:text-white transition-colors whitespace-nowrap" data-target="tab3">Units 9-12</button>
+                <button onclick="switchTab('tab4')" class="tab-btn w-full flex items-center justify-center gap-2 py-3 px-4 text-sm font-semibold rounded-t-lg text-indigo-100 hover:bg-indigo-500 hover:text-white transition-colors whitespace-nowrap" data-target="tab4">Units 13-16</button>
+                <button onclick="switchTab('tab5')" class="tab-btn w-full flex items-center justify-center gap-2 py-3 px-4 text-sm font-semibold rounded-t-lg text-indigo-100 hover:bg-indigo-500 hover:text-white transition-colors whitespace-nowrap" data-target="tab5">Units 17-20</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- ================= TAB 1: Units 1-4 ================= -->
+        <section id="tab1" class="tab-content active">
+            <!-- Unit 1 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4 mt-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 1: The Alphabet</h2>
+                <p class="text-slate-500">Letter recognition and basic sounds.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Alphabet Slap</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Race to swat the correct letter on the board when the sound is called.</p>
+                    <div class="hidden game-materials">Flyswatters, letter flashcards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Stick A-Z flashcards on the board.</li><li>Two teams line up.</li><li>Teacher says a letter sound (e.g., /b/).</li><li>Students race to swat 'B'.</li></ol></div>
+                    <div class="hidden game-tips">Say the *sound* not the *name* of the letter to reinforce phonics.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Letter Match</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Match uppercase letters to lowercase letters.</p>
+                    <div class="hidden game-materials">Uppercase and lowercase letter cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Scatter uppercase cards on one side of the room, lowercase on the other.</li><li>Give a student an uppercase card.</li><li>They must run and find the matching lowercase card.</li></ol></div>
+                    <div class="hidden game-tips">Have them shout the letter sound once they find the match.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Alphabet Soup</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Draw a letter from a bowl and say a word that starts with it.</p>
+                    <div class="hidden game-materials">A bowl, plastic letters or small letter cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Pass the "soup bowl" around while playing music.</li><li>Stop the music. The student holding the bowl pulls out a letter.</li><li>They must say the sound and a word (e.g., "/c/ Cat!").</li></ol></div>
+                    <div class="hidden game-tips">For beginners, put pictures on the board they can use as hints.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Air Writing</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Write letters in the air for classmates to guess.</p>
+                    <div class="hidden game-materials">None.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Teacher silently writes a large letter in the air with their finger.</li><li>Students guess the letter and shout its sound.</li><li>Let students take turns coming to the front to be the "writer".</li></ol></div>
+                    <div class="hidden game-tips">Make sure they write facing the class so it doesn't look backward.</div>
+                </div>
+            </div>
+
+            <!-- Unit 2 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 2: Consonants Pairs</h2>
+                <p class="text-slate-500">Practicing paired consonant sounds.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Sound Sorting</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Sort picture cards by their beginning consonant sound.</p>
+                    <div class="hidden game-materials">Picture cards, two baskets labeled with letters (e.g., B and P).</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Show a picture (e.g., Pig).</li><li>Ask students: "Does this start with /p/ or /b/?"</li><li>Students race to put the card in the correct basket.</li></ol></div>
+                    <div class="hidden game-tips">Focus on voiced vs. unvoiced pairs (like B/P, D/T) to help them feel the throat vibration.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Consonant Charades</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Act out an animal or object starting with a specific consonant.</p>
+                    <div class="hidden game-materials">Consonant flashcards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Hold up a letter (e.g., 'M').</li><li>Students must act like something starting with M (Monkey, Monster).</li><li>Teacher guesses what they are acting out.</li></ol></div>
+                    <div class="hidden game-tips">This gets them moving. Model an example first so they know what to do.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Mystery Bag</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Pull a real object from a bag and identify its first sound.</p>
+                    <div class="hidden game-materials">A bag, real items (pen, book, cup).</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Have a student close their eyes and reach into the bag.</li><li>They pull out an item and name it.</li><li>They must shout the beginning consonant sound.</li></ol></div>
+                    <div class="hidden game-tips">Realia (real objects) makes phonics highly engaging for beginners.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Four Corners</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Run to the corner that matches the starting sound.</p>
+                    <div class="hidden game-materials">4 letter cards placed in room corners.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Label the 4 corners of the room with different consonants.</li><li>Call out a word.</li><li>Students must run to the corner with the matching starting letter.</li></ol></div>
+                    <div class="hidden game-tips">Keep the words simple and emphasize the first sound heavily.</div>
+                </div>
+            </div>
+
+            <!-- Unit 3 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 3: Other Consonants</h2>
+                <p class="text-slate-500">Remaining consonants and sound mastery.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Sound Hopscotch</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Jump on the correct letter when you hear the sound.</p>
+                    <div class="hidden game-materials">Large letter cards taped to the floor.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Tape letters on the floor like a hopscotch grid.</li><li>Say a sound.</li><li>Student must jump directly onto that letter.</li></ol></div>
+                    <div class="hidden game-tips">Use tape that doesn't ruin the floor! Great for kinesthetic learners.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Pass the Sound</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Pass a card and change the sound quickly.</p>
+                    <div class="hidden game-materials">Letter cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Sit in a circle. Hand a letter card to Student A.</li><li>Student A says the sound and passes it.</li><li>When teacher claps, change the letter card.</li></ol></div>
+                    <div class="hidden game-tips">Speeds up response time and automaticity.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Flyswatter Review</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Hit the picture that matches the consonant.</p>
+                    <div class="hidden game-materials">Flyswatters, picture cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Put pictures of objects on the board.</li><li>Call out a consonant sound (e.g., /v/).</li><li>Teams race to swat the 'Van'.</li></ol></div>
+                    <div class="hidden game-tips">Using pictures instead of letters trains them to map sounds to words.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Write the Room</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Walk around and find hidden letters to write down.</p>
+                    <div class="hidden game-materials">Clipboards, paper, hidden letter cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Hide consonant cards around the room.</li><li>Give students a paper.</li><li>They must walk around, find the letters, and write them down.</li></ol></div>
+                    <div class="hidden game-tips">After they find them all, have them read the sounds back to you.</div>
+                </div>
+            </div>
+
+            <!-- Unit 4 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 4: Short Vowels</h2>
+                <p class="text-slate-500">Focusing on short a, e, i, o, u.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Vowel Jump</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Jump when you hear the target short vowel sound.</p>
+                    <div class="hidden game-materials">None.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Tell the class: "Jump when you hear the short A sound (/æ/)."</li><li>Read a list of words slowly: bed, pig, CAT!</li><li>Students must jump on 'Cat'.</li></ol></div>
+                    <div class="hidden game-tips">Great for ear training. Exaggerate the middle vowel sound.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">CVC Word Maker</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Use letter cards to build simple 3-letter words.</p>
+                    <div class="hidden game-materials">Consonant and Vowel letter cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Give groups a set of letters.</li><li>Teacher says a word: "Sun".</li><li>Groups race to arrange the cards: S - U - N.</li></ol></div>
+                    <div class="hidden game-tips">Use blue cards for consonants and red cards for vowels to make the CVC pattern obvious.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Vowel Pop</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Tap the correct vowel balloon on the smartboard.</p>
+                    <div class="hidden game-materials">Whiteboard with 5 vowels drawn inside balloons.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Draw 5 balloons on the board (a, e, i, o, u).</li><li>Say a CVC word.</li><li>Student runs up and "pops" (taps) the correct middle vowel.</li></ol></div>
+                    <div class="hidden game-tips">Short E and Short I are very hard to distinguish. Give extra practice with those two.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Middle Sound Sort</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Sort picture cards by their middle vowel sound.</p>
+                    <div class="hidden game-materials">Picture cards of CVC words, 5 baskets.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Label 5 baskets with a, e, i, o, u.</li><li>Give pairs a stack of picture cards (dog, cat, bed).</li><li>They must sort the pictures into the correct vowel basket.</li></ol></div>
+                    <div class="hidden game-tips">Check answers together. Have them stretch the word out like a rubber band: ddd-ooo-ggg.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 2: Units 5-8 ================= -->
+        <section id="tab2" class="tab-content">
+            <!-- Unit 5 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4 mt-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 5: Silent E Rule</h2>
+                <p class="text-slate-500">Magic E makes the vowel say its name.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Magic Wand E</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Use a magic wand to change a short vowel word to a long vowel word.</p>
+                    <div class="hidden game-materials">A star wand with an 'e' taped to it, word cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Write 'tap' on the board.</li><li>Student reads "tap".</li><li>Tap the end of the word with the Magic 'e' wand.</li><li>Student must read the new word: "tape".</li></ol></div>
+                    <div class="hidden game-tips">The visual aid of the wand helps concrete the concept of the 'magic' change.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Silent E Flip</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Foldable cards that hide and reveal the silent e.</p>
+                    <div class="hidden game-materials">Foldable index cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Write CVC words on cards, with an extra folded flap for 'e'.</li><li>Show 'plan'. Student reads it.</li><li>Flip the flap open to reveal 'plane'. Student reads again.</li></ol></div>
+                    <div class="hidden game-tips">Great for independent station work.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">CVCe Bingo</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Bingo game using only Silent E words.</p>
+                    <div class="hidden game-materials">Bingo cards with CVCe words.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Give students bingo grids filled with words like cake, bike, home.</li><li>Call out the words clearly.</li><li>First to get a line wins.</li></ol></div>
+                    <div class="hidden game-tips">Call out "kit" as a trick. If they cross out "kite", correct them!</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Word Transformation</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Relay race to add 'e' to words on the board.</p>
+                    <div class="hidden game-materials">Whiteboard, markers.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Write a list of CVC words on the board for two teams (cub, mad, pin).</li><li>Students race up and add an 'e' to the end.</li><li>They must read the new word aloud to score.</li></ol></div>
+                    <div class="hidden game-tips">Make sure the base CVC words actually form real CVCe words!</div>
+                </div>
+            </div>
+
+            <!-- Unit 6 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 6: Long Vowels Ⅰ</h2>
+                <p class="text-slate-500">Vowel teams like ai, ay, ee, ea.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Vowel Team Sort</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Sort word cards into their correct vowel team columns.</p>
+                    <div class="hidden game-materials">Word cards with ai, ay, ee, ea.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Draw columns on the board for 'ai' and 'ay'.</li><li>Give students word cards (rain, play, day, train).</li><li>They must stick them in the right column and read them.</li></ol></div>
+                    <div class="hidden game-tips">Teach the rule: 'ay' usually comes at the end of a word, 'ai' in the middle.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Team Relay</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Run to the board to fill in the missing vowel team.</p>
+                    <div class="hidden game-materials">Whiteboard.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Write incomplete words: s _ _ d (seed), p l _ _ (play).</li><li>Teams run up and fill in the missing 2 vowels.</li><li>Read the word aloud to win.</li></ol></div>
+                    <div class="hidden game-tips">Remind them "When two vowels go walking, the first one does the talking."</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Picture Dictation</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Teacher dictates a word, students spell it and draw it.</p>
+                    <div class="hidden game-materials">Mini whiteboards for students.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Say: "Tree".</li><li>Students must write T-R-E-E and draw a quick tree.</li><li>Hold up boards to check spelling.</li></ol></div>
+                    <div class="hidden game-tips">Drawing connects the abstract spelling to concrete meaning.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Long Vowel Slap</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Listen to the word and swat the correct vowel team.</p>
+                    <div class="hidden game-materials">Flyswatters, flashcards of vowel teams.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Put cards for EE, EA, AI, AY on the board.</li><li>Say a word: "Meat!"</li><li>Students swat the 'EA' card.</li></ol></div>
+                    <div class="hidden game-tips">Since EE and EA sound the same, you may need to show them the picture to help them guess the spelling.</div>
+                </div>
+            </div>
+
+            <!-- Unit 7 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 7: Long Vowels Ⅱ</h2>
+                <p class="text-slate-500">Vowel teams like ie, igh, oa, ow.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Vowel Board Game</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Roll dice and read words with Long O and Long I.</p>
+                    <div class="hidden game-materials">Printed board game, dice, tokens.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Groups of 3-4 play a board game.</li><li>Land on a square (e.g., 'boat').</li><li>Must read the word correctly to stay on the square.</li></ol></div>
+                    <div class="hidden game-tips">Include 'igh' words (night, high) as these are usually visually confusing for beginners.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Whisper Down the Alley</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Whisper a long vowel word down a line to test phonics clarity.</p>
+                    <div class="hidden game-materials">None.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Line up students.</li><li>Whisper a word like "Snow" to the first student.</li><li>They whisper it to the next.</li><li>The last student must write it on the board.</li></ol></div>
+                    <div class="hidden game-tips">Ensure they enunciate the long vowel clearly when whispering.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Sound Match Memory</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Play memory match with pictures and Long Vowel II words.</p>
+                    <div class="hidden game-materials">Word and picture cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Cards face down.</li><li>Flip two cards. If 'pie' matches the picture of a pie, keep it.</li><li>Student must read the word out loud.</li></ol></div>
+                    <div class="hidden game-tips">Excellent for quiet, focused center work.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Vowel Search</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Find hidden long vowel words in a letter grid.</p>
+                    <div class="hidden game-materials">Printed word search worksheets.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Give students a word search.</li><li>They must find words like coat, tie, light, window.</li><li>Circle them and read them to a partner.</li></ol></div>
+                    <div class="hidden game-tips">Keeps students looking at letter combinations (igh, oa) repeatedly, building visual memory.</div>
+                </div>
+            </div>
+
+            <!-- Unit 8 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 8: Consonant Digraphs</h2>
+                <p class="text-slate-500">Two consonants, one sound: sh, ch, th, wh.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Digraph Sort</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Sort picture cards under the correct digraph heading.</p>
+                    <div class="hidden game-materials">Headers (sh, ch, th, wh) and picture cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Place headers on the board.</li><li>Give pairs picture cards (ship, chair, thumb, whale).</li><li>Sort them into the correct columns.</li></ol></div>
+                    <div class="hidden game-tips">Make sure to practice voiced vs unvoiced 'th' (this vs. thumb).</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Digraph Slap</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Listen to the teacher and swat the correct digraph.</p>
+                    <div class="hidden game-materials">Flyswatters, large digraph cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Put SH, CH, TH, WH on the board.</li><li>Say a word: "Cheese!".</li><li>Students swat 'CH'.</li></ol></div>
+                    <div class="hidden game-tips">Sh and Ch are often confused by ESL learners. Exaggerate the explosive sound of 'CH'.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Digraph Hunt</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Search the classroom for objects containing digraphs.</p>
+                    <div class="hidden game-materials">Post-it notes.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Tell students to find items with SH, CH, TH.</li><li>They put post-its on them (Shoe, Chair, Trash).</li><li>Review all found items together.</li></ol></div>
+                    <div class="hidden game-tips">Pre-hide some picture cards around the room if there aren't enough real objects.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Mystery Digraph</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Fill in the missing digraph to complete the word.</p>
+                    <div class="hidden game-materials">Mini whiteboards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Write incomplete words on the board: __ ip.</li><li>Hold up a picture of a Ship.</li><li>Students write 'SH' on their whiteboards and hold them up.</li></ol></div>
+                    <div class="hidden game-tips">Make it a race for extra excitement.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 3: Units 9-12 ================= -->
+        <section id="tab3" class="tab-content">
+            <!-- Unit 9 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4 mt-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 9: Hard And Soft C,G</h2>
+                <p class="text-slate-500">C says /s/, G says /j/ before e, i, y.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Hard/Soft Sort</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Categorize words based on whether they have a hard or soft sound.</p>
+                    <div class="hidden game-materials">Word cards (cat, city, gate, gym).</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Draw a 'Hard C' and 'Soft C' column.</li><li>Students read a word card.</li><li>They tape it in the correct column based on the sound.</li></ol></div>
+                    <div class="hidden game-tips">Teach them to highlight the letter immediately following C or G to decide the sound.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Sound Hop</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Jump to the left for hard sounds, right for soft sounds.</p>
+                    <div class="hidden game-materials">None.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Draw a line down the middle of the room.</li><li>Say a word: "Giraffe!"</li><li>Students hop to the 'Soft G' side. Say "Goat!" -> hop to the 'Hard G' side.</li></ol></div>
+                    <div class="hidden game-tips">Great TPR (Total Physical Response) activity to break up sitting time.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Word Reading Race</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Relay race to read hard and soft words correctly.</p>
+                    <div class="hidden game-materials">List of words on the board.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Write mixed C and G words on the board.</li><li>Students run up one by one.</li><li>They must point and read a word correctly to score.</li></ol></div>
+                    <div class="hidden game-tips">If they mispronounce 'magic' with a hard G, make them run back and try again next turn.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Circle the Clue</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Find the vowels that make C and G soft.</p>
+                    <div class="hidden game-materials">Worksheets.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Give students a list of words.</li><li>They must circle the 'e', 'i', or 'y' that follows the C or G.</li><li>Then read the word to a partner.</li></ol></div>
+                    <div class="hidden game-tips">Visualizing the rule is vital. Circling forces them to look at the rule in action.</div>
+                </div>
+            </div>
+
+            <!-- Unit 10 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 10: Consonant Blends</h2>
+                <p class="text-slate-500">Blends where both sounds are heard: bl, cr, st, etc.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Blend Match</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Match the consonant blend to the rest of the word.</p>
+                    <div class="hidden game-materials">Blend cards (bl, tr) and ending cards (ack, ee).</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Give students a stack of blend beginnings.</li><li>They must match them to word endings to form real words (bl + ack = black).</li><li>Read the new word.</li></ol></div>
+                    <div class="hidden game-tips">Explain that unlike digraphs, you hear BOTH letters in a blend quickly.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Board Race</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Race to write the missing blend on the board.</p>
+                    <div class="hidden game-materials">Whiteboard, markers.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Write words missing their blends: __ ock (block/clock).</li><li>Say the word aloud.</li><li>Students race to write the correct blend in the blank.</li></ol></div>
+                    <div class="hidden game-tips">Accept multiple correct answers if they form real words, as long as they read it correctly!</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Mystery Blend</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Listen to a word and hold up the correct blend card.</p>
+                    <div class="hidden game-materials">Mini blend cards for each student.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Give each student 'sl', 'fl', 'cl' cards.</li><li>Say: "Flag".</li><li>Students must quickly hold up the 'fl' card.</li></ol></div>
+                    <div class="hidden game-tips">This lets you check the entire class's understanding simultaneously.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Blend Bingo</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Classic Bingo using only words that start with consonant blends.</p>
+                    <div class="hidden game-materials">Bingo boards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Students fill bingo boards with blend words (frog, stop, tree).</li><li>Call out words.</li><li>First to get a line shouts Bingo.</li></ol></div>
+                    <div class="hidden game-tips">Make them spell the winning words back to you to verify.</div>
+                </div>
+            </div>
+
+            <!-- Unit 11 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 11: Silent Letters</h2>
+                <p class="text-slate-500">Letters you see but don't hear: kn, wr, mb.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Ghost Letter Hunt</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Find words with silent letters and circle the "ghost" letter.</p>
+                    <div class="hidden game-materials">Worksheets.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Give a text filled with silent letter words (knee, write, comb).</li><li>Students read and draw a little 'ghost' over the silent letter.</li><li>Read the words aloud.</li></ol></div>
+                    <div class="hidden game-tips">Calling them "Ghost Letters" helps younger learners remember they are invisible to the ear.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Silent Letter Slap</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Swat the correct spelling when the teacher says a word.</p>
+                    <div class="hidden game-materials">Flyswatters.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Write pairs on the board: "nite/knight", "rite/write".</li><li>Say the word.</li><li>Teams must swat the correct, silent-letter spelling.</li></ol></div>
+                    <div class="hidden game-tips">This trains visual memory, which is essential for silent letters.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Spelling Relay</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Run to the board to spell words with silent letters correctly.</p>
+                    <div class="hidden game-materials">Whiteboard, markers.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Say a word: "Thumb".</li><li>Students run and write it.</li><li>If they forget the 'b', their team helps them fix it.</li></ol></div>
+                    <div class="hidden game-tips">Review the common combinations (kn, wr, mb, gn) before starting.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Silent Word Match</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Match the picture to the silent letter word.</p>
+                    <div class="hidden game-materials">Cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Place pictures on the table.</li><li>Students match words like 'knife', 'wreath', 'lamb' to the pictures.</li><li>Read them aloud.</li></ol></div>
+                    <div class="hidden game-tips">Focus on vocabulary building here as some of these words are less common.</div>
+                </div>
+            </div>
+
+            <!-- Unit 12 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 12: Vowel Digraph</h2>
+                <p class="text-slate-500">More complex vowel teams producing one sound.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Digraph Memory</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Play memory matching words with the same vowel digraph.</p>
+                    <div class="hidden game-materials">Word cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Turn cards face down.</li><li>Flip two. If they share a digraph (e.g., Moon, Spoon), keep them.</li><li>Must read both words aloud.</li></ol></div>
+                    <div class="hidden game-tips">Great for focusing on the middle sounds of words.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Digraph Sort</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Sort words into different vowel digraph columns.</p>
+                    <div class="hidden game-materials">Word cards, board.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Draw columns for 'oo' (book), 'oo' (moon), 'ew', etc.</li><li>Students tape words in the correct column.</li></ol></div>
+                    <div class="hidden game-tips">Highlight that 'oo' makes two different sounds (look vs. boot).</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Sound Bingo</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Bingo focused on vowel digraphs.</p>
+                    <div class="hidden game-materials">Bingo boards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Students fill board with digraph words.</li><li>Teacher says the word.</li><li>Cross it out until Bingo.</li></ol></div>
+                    <div class="hidden game-tips">Encourage students to spell the word out loud when they get bingo to confirm.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Digraph Dictation</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Listen to the teacher and write the correct vowel digraph word.</p>
+                    <div class="hidden game-materials">Mini whiteboards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Say a word: "Foot".</li><li>Students write the whole word.</li><li>Hold up boards. Correct any spelling mistakes immediately.</li></ol></div>
+                    <div class="hidden game-tips">This checks if they can distinguish between similar sounds and spell them accurately.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 4: Units 13-16 ================= -->
+        <section id="tab4" class="tab-content">
+            <!-- Unit 13 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4 mt-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 13: Diphthongs Ⅰ</h2>
+                <p class="text-slate-500">Gliding vowels: oi, oy, ou, ow.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Diphthong Hop</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Jump on the correct diphthong card.</p>
+                    <div class="hidden game-materials">Floor cards (oi, oy, ou, ow).</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Place cards on the floor.</li><li>Say a word: "Cow!".</li><li>Student hops onto 'ow'.</li></ol></div>
+                    <div class="hidden game-tips">Teach the rule: 'oy' usually ends a word, 'oi' is in the middle. Same for 'ow' and 'ou'.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Word Maker</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Combine consonants with diphthongs to build words.</p>
+                    <div class="hidden game-materials">Letter cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Give pairs consonant cards and diphthong cards.</li><li>Teacher says: "Coin".</li><li>Students build C-OI-N.</li></ol></div>
+                    <div class="hidden game-tips">This visual building helps cement spelling patterns.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Picture Match</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Match diphthong words to their pictures.</p>
+                    <div class="hidden game-materials">Word and picture cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Scatter words and pictures.</li><li>Students find the match (e.g., 'Boy' text + Boy picture).</li><li>Read word aloud.</li></ol></div>
+                    <div class="hidden game-tips">Good for individual practice or quiet time.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Flyswatter</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Swat the correct diphthong word.</p>
+                    <div class="hidden game-materials">Flyswatters.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Write words on board: boil, toy, house, town.</li><li>Say the sound: /oy/.</li><li>Students swat 'toy' or 'boil'.</li></ol></div>
+                    <div class="hidden game-tips">Make them say the word after they hit it to practice the gliding sound.</div>
+                </div>
+            </div>
+
+            <!-- Unit 14 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 14: Diphthongs Ⅱ</h2>
+                <p class="text-slate-500">More complex vowel sounds like au, aw.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Sound Sort</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Sort words into 'au' and 'aw' categories.</p>
+                    <div class="hidden game-materials">Word cards, columns on board.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Draw 'au' and 'aw' columns.</li><li>Students take a card (e.g., saw, August).</li><li>Place it in correct column and read.</li></ol></div>
+                    <div class="hidden game-tips">Explain 'aw' usually comes at the end of syllables/words, while 'au' is in the middle.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Diphthong Slap</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Swat the correct spelling pattern when heard.</p>
+                    <div class="hidden game-materials">Flyswatters.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Put 'au' and 'aw' on board.</li><li>Say "Claw!".</li><li>Students swat 'aw'.</li></ol></div>
+                    <div class="hidden game-tips">These sound identical, so focus on visual spelling rules.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Word Reading Race</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Relay race to read diphthong words correctly.</p>
+                    <div class="hidden game-materials">Board.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Write a list of au/aw words.</li><li>Teams race up.</li><li>Read the word aloud correctly to score.</li></ol></div>
+                    <div class="hidden game-tips">Ensure they drop their jaw to make the correct /ɔ/ sound.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Diphthong Bingo</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Play bingo with au/aw vocabulary.</p>
+                    <div class="hidden game-materials">Bingo cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Fill board with target words.</li><li>Call out words.</li><li>First to get a line wins.</li></ol></div>
+                    <div class="hidden game-tips">Ask the winner to write one of their winning words on the board.</div>
+                </div>
+            </div>
+
+            <!-- Unit 15 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 15: R Control Vowels Ⅰ</h2>
+                <p class="text-slate-500">Bossy R sounds: ar, er.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Bossy R Sort</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Sort words into 'ar' and 'er' columns.</p>
+                    <div class="hidden game-materials">Word cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Draw 'ar' (car) and 'er' (tiger) on board.</li><li>Give out cards.</li><li>Students tape them in correct columns.</li></ol></div>
+                    <div class="hidden game-tips">Remind them 'R' is bossy and changes the vowel sound completely.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Bossy R Slap</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Listen to the word and swat 'ar' or 'er'.</p>
+                    <div class="hidden game-materials">Flyswatters.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Put AR and ER on the board.</li><li>Say "Star!".</li><li>Students swat AR.</li></ol></div>
+                    <div class="hidden game-tips">Make them repeat the word with a big "pirate" ARRR sound for fun.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Word Search</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Find hidden 'ar' and 'er' words.</p>
+                    <div class="hidden game-materials">Word search worksheets.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Hand out worksheets.</li><li>Find target words (park, farm, sister, water).</li><li>Circle and read them.</li></ol></div>
+                    <div class="hidden game-tips">Focuses visual attention on the spelling pattern.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Mystery Bossy R</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Fill in the missing R-controlled vowel.</p>
+                    <div class="hidden game-materials">Whiteboards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Write: f __ m.</li><li>Show picture of a Farm.</li><li>Students write 'ar' on whiteboards.</li></ol></div>
+                    <div class="hidden game-tips">Check all whiteboards to ensure everyone is participating.</div>
+                </div>
+            </div>
+
+            <!-- Unit 16 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 16: R Control Vowels Ⅱ</h2>
+                <p class="text-slate-500">Bossy R sounds: ir, or, ur.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Bossy R Hop</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Jump to the correct ir, or, ur card.</p>
+                    <div class="hidden game-materials">Floor cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Place ir, or, ur on the floor.</li><li>Say "Fork!".</li><li>Student jumps on 'or'.</li></ol></div>
+                    <div class="hidden game-tips">Explain that 'ir' and 'ur' sound exactly the same, so they must memorize the spelling!</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Bossy R Bingo</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Bingo game for ir, or, ur words.</p>
+                    <div class="hidden game-materials">Bingo cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Fill board with words (bird, corn, nurse).</li><li>Call out words.</li><li>First line wins.</li></ol></div>
+                    <div class="hidden game-tips">Spell the word when calling it out to help them distinguish 'ir' and 'ur'.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Picture Dictation</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Spell the word and draw the picture.</p>
+                    <div class="hidden game-materials">Whiteboards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Say "Shirt".</li><li>Students write S-H-I-R-T and draw it.</li><li>Check whiteboards.</li></ol></div>
+                    <div class="hidden game-tips">Great for combining digraphs (sh) with R-controlled vowels (ir).</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Sound Sort</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Sort words into ir, or, ur columns.</p>
+                    <div class="hidden game-materials">Word cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Draw columns.</li><li>Students tape words in correct column.</li><li>Read aloud.</li></ol></div>
+                    <div class="hidden game-tips">Highlight the target letters with a different colored marker.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TAB 5: Units 17-20 ================= -->
+        <section id="tab5" class="tab-content">
+            <!-- Unit 17 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4 mt-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 17: R Control Vowels Ⅲ</h2>
+                <p class="text-slate-500">Review of all Bossy R sounds.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Bossy R Review</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">A comprehensive board game covering ar, er, ir, or, ur.</p>
+                    <div class="hidden game-materials">Board game, dice.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Groups play a board game.</li><li>Must read the R-controlled word correctly to stay on the square.</li></ol></div>
+                    <div class="hidden game-tips">Encourage peer correction. If they read 'car' as 'care', the group can correct them.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Flyswatter Mix</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Swat the correct word among all Bossy R types.</p>
+                    <div class="hidden game-materials">Flyswatters.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Write mixed words (car, term, bird, fork, surf) on board.</li><li>Say a word.</li><li>Teams race to swat it.</li></ol></div>
+                    <div class="hidden game-tips">This tests visual discrimination since many sound similar.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Spelling Relay</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Run and write the spelling dictated by the teacher.</p>
+                    <div class="hidden game-materials">Board.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Say "Nurse!".</li><li>Student runs and writes 'nurse'.</li><li>Team gets point if correct.</li></ol></div>
+                    <div class="hidden game-tips">er, ir, and ur sound the same. This is a pure spelling memory test.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Word Match</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Match all types of R-controlled words to pictures.</p>
+                    <div class="hidden game-materials">Cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Scatter pictures and words.</li><li>Students match them up.</li><li>Read aloud to the teacher to finish.</li></ol></div>
+                    <div class="hidden game-tips">A quiet synthesis activity to end the Bossy R series.</div>
+                </div>
+            </div>
+
+            <!-- Unit 18 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 18: Y as a Vowel</h2>
+                <p class="text-slate-500">Y sounding like long 'i' (fly) or long 'e' (happy).</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Y Sound Sort</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Sort words by Y = /i/ or Y = /e/.</p>
+                    <div class="hidden game-materials">Word cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Draw columns for 'Y sounds like I' and 'Y sounds like E'.</li><li>Students read cards (cry, puppy).</li><li>Tape in correct column.</li></ol></div>
+                    <div class="hidden game-tips">Teach the rule: Short words (cry, my) usually make the 'I' sound. Longer words (happy, candy) make the 'E' sound.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Y Slap</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Listen and swat the 'I' or 'E' card.</p>
+                    <div class="hidden game-materials">Flyswatters.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Put 'I' and 'E' on the board.</li><li>Say "Baby".</li><li>Students swat 'E'.</li></ol></div>
+                    <div class="hidden game-tips">Helps them train their ears to the vowel sound Y makes at the end of words.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Word Reading Relay</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Race to read Y words on the board.</p>
+                    <div class="hidden game-materials">Board.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Write list of Y words.</li><li>Run up, point, and read perfectly.</li><li>Run back.</li></ol></div>
+                    <div class="hidden game-tips">Make sure they read 'sky' with an 'I' sound and 'funny' with an 'E' sound.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Y Bingo</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Bingo with 'Y as a vowel' vocabulary.</p>
+                    <div class="hidden game-materials">Bingo boards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Fill board with words like sky, fly, happy, silly.</li><li>Call out words.</li><li>First to get a line wins.</li></ol></div>
+                    <div class="hidden game-tips">Call out "Puppy". Have students repeat the word after crossing it out.</div>
+                </div>
+            </div>
+
+            <!-- Unit 19 & 20 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 19 & 20: Syllables Ⅰ& II</h2>
+                <p class="text-slate-500">Breaking words into sound chunks.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Syllable Clap</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Listen to a word and clap out the number of syllables.</p>
+                    <div class="hidden game-materials">None.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Say a word: "Apple".</li><li>Model clapping: Ap-ple (2 claps).</li><li>Say "Elephant" -> El-e-phant (3 claps).</li></ol></div>
+                    <div class="hidden game-tips">Teach them the "chin drop" method. Put hand under chin; how many times does the jaw drop?</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Syllable Sort</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Sort word cards into 1, 2, or 3 syllable groups.</p>
+                    <div class="hidden game-materials">Word cards.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Draw columns: 1, 2, 3.</li><li>Students read card (e.g., banana).</li><li>Clap it out, tape it in column '3'.</li></ol></div>
+                    <div class="hidden game-tips">Visually underline the vowels on the cards to show that every syllable needs a vowel sound.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Syllable Hop</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Hop forward for every syllable in a word.</p>
+                    <div class="hidden game-materials">None.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Line students up.</li><li>Say a word: "Computer".</li><li>Students must hop 3 times.</li></ol></div>
+                    <div class="hidden game-tips">If they hop the wrong amount, they have to go back to the start!</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Word Building</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Put broken syllables together to make a full word.</p>
+                    <div class="hidden game-materials">Cards with single syllables (tig + er).</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Give pairs broken words (pa + per, doc + tor).</li><li>They must match them to form real words.</li><li>Read them aloud.</li></ol></div>
+                    <div class="hidden game-tips">This trains them to read long words by breaking them into manageable chunks.</div>
+                </div>
+            </div>
+
+            <!-- Unit 21 & 22 -->
+            <div class="mb-6 border-l-4 border-indigo-500 pl-4">
+                <h2 class="text-2xl font-bold text-slate-800">Unit 21 & 22: Linking Sound & Intonation</h2>
+                <p class="text-slate-500">Reading sentences smoothly with emotion.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-10">
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Linking Sound Read</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Practice linking a consonant ending to a vowel beginning.</p>
+                    <div class="hidden game-materials">Sentences on board.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Write: "It is an apple."</li><li>Draw a link from 't' to 'i', 's' to 'a', 'n' to 'a'.</li><li>Have them read it smoothly: "I-ti-za-napple."</li></ol></div>
+                    <div class="hidden game-tips">This helps eliminate robotic, word-by-word reading.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Intonation Echo</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Listen to the teacher's pitch and repeat exactly.</p>
+                    <div class="hidden game-materials">None.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Say a question with rising pitch: "Are you okay? ↗"</li><li>Students must echo the exact pitch.</li><li>Say a statement: "I am fine. ↘"</li></ol></div>
+                    <div class="hidden game-tips">Use hand gestures (moving hand up or down) to visually show the pitch changing.</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Sentence Relay</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Read a full sentence with linking and intonation to score.</p>
+                    <div class="hidden game-materials">Sentences on board.</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Write sentences with ? and ! on the board.</li><li>Students race up.</li><li>Must read the sentence smoothly with correct emotion to win a point.</li></ol></div>
+                    <div class="hidden game-tips">If they read it like a robot, send them back to try again!</div>
+                </div>
+                <div class="group bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative" onclick="openModal(this)">
+                    <div class="flex items-center gap-3 mb-3"><span class="bg-indigo-100 text-indigo-600 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span><h3 class="text-lg font-bold game-title group-hover:text-indigo-600">Emotion Reading</h3></div>
+                    <p class="text-sm text-slate-500 line-clamp-2">Read the same sentence using different emotional tones.</p>
+                    <div class="hidden game-materials">Emotion cards (Happy, Sad, Angry, Scared).</div>
+                    <div class="hidden game-steps"><ol class="list-decimal list-outside ml-4 space-y-1"><li>Write: "Look at that dog."</li><li>Show an 'Angry' card. Student reads it angrily.</li><li>Show 'Happy' card. Read it happily.</li></ol></div>
+                    <div class="hidden game-tips">This proves they understand that punctuation and tone change the entire meaning of English.</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal Background Overlay -->
+    <div id="gameModal" class="fixed inset-0 bg-slate-900/80 z-50 flex items-center justify-center p-4 backdrop-blur-sm hidden" onclick="closeModalOnOutsideClick(event)">
+        <!-- Modal Content Container -->
+        <div id="modalContent" class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col transform transition-transform duration-300 scale-95 opacity-0 border border-slate-200">
+            
+            <!-- Modal Header -->
+            <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center sticky top-0 z-10">
+                <h2 id="modalTitle" class="text-2xl font-bold text-slate-900 tracking-tight">Activity Title</h2>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-rose-600 hover:bg-rose-50 p-2 rounded-full transition-colors outline-none focus:ring-2 focus:ring-rose-200">
+                    <i class="ph ph-x text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Body (Scrollable) -->
+            <div class="p-6 overflow-y-auto space-y-6">
+                <!-- Materials Section -->
+                <div>
+                    <h4 class="text-lg font-bold flex items-center gap-2 text-indigo-700 mb-2 border-b border-indigo-100 pb-1">
+                        <i class="ph-fill ph-toolbox text-xl"></i> Materials
+                    </h4>
+                    <p id="modalMaterials" class="text-slate-700 leading-relaxed pl-1"></p>
+                </div>
+                
+                <!-- Steps Section -->
+                <div>
+                    <h4 class="text-lg font-bold flex items-center gap-2 text-emerald-700 mb-2 border-b border-emerald-100 pb-1">
+                        <i class="ph-fill ph-list-numbers text-xl"></i> Steps
+                    </h4>
+                    <div id="modalSteps" class="text-slate-700 leading-relaxed pl-1"></div>
+                </div>
+                
+                <!-- Tips Section -->
+                <div>
+                    <h4 class="text-lg font-bold flex items-center gap-2 text-amber-600 mb-2 border-b border-amber-100 pb-1">
+                        <i class="ph-fill ph-lightbulb text-xl"></i> Teacher Tips
+                    </h4>
+                    <div class="bg-amber-50 rounded-xl p-4 border border-amber-200 shadow-inner">
+                        <p id="modalTips" class="text-amber-900 leading-relaxed"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="bg-slate-100 px-6 py-4 border-t border-slate-200 flex justify-end">
+                <button onclick="closeModal()" class="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow-sm transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 outline-none">
+                    Close
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Tab switching logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-white', 'text-indigo-700', 'active-tab');
+                btn.classList.add('text-indigo-100', 'hover:bg-indigo-500', 'hover:text-white');
+            });
+            document.getElementById(tabId).classList.add('active');
+            const activeBtn = document.querySelector(`.tab-btn[data-target="${tabId}"]`);
+            activeBtn.classList.remove('text-indigo-100', 'hover:bg-indigo-500', 'hover:text-white');
+            activeBtn.classList.add('bg-white', 'text-indigo-700', 'active-tab');
+            activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+
+        // Modal logic
+        const modal = document.getElementById('gameModal');
+        const modalContent = document.getElementById('modalContent');
+
+        function openModal(cardElement) {
+            // Get hidden data from the card
+            const title = cardElement.querySelector('.game-title').innerText;
+            const materials = cardElement.querySelector('.game-materials').innerHTML;
+            const steps = cardElement.querySelector('.game-steps').innerHTML;
+            const tips = cardElement.querySelector('.game-tips').innerHTML;
+
+            // Populate Modal
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalMaterials').innerHTML = materials;
+            document.getElementById('modalSteps').innerHTML = steps;
+            document.getElementById('modalTips').innerHTML = tips;
+
+            // Show Modal with animation
+            modal.classList.remove('hidden');
+            // Prevent background scrolling
+            document.body.style.overflow = 'hidden'; 
+            
+            // Trigger animation
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            // Hide animation
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            
+            // Hide DOM after animation
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Restore background scrolling
+            }, 300);
+        }
+
+        // Close modal on outside click
+        function closeModalOnOutsideClick(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
